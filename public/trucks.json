@@ -1,0 +1,14 @@
+[
+      {
+        "id": "MH01-AP-3545",
+        "name": "Truck 1",
+        "numberPlate": "MH01-AP-3545",
+        "modelNumber": "Model XYZ",
+        "capacity": "5 tons",
+        "make": "Tata",
+        "mac":"00:25:96:FF:FE:12:34:56",
+        "wifi-strength":"-10",
+        "loadCell": [151, 180, 220, 49, 93, 120]
+      }
+]
+    

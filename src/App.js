@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+
 import './App.css';
+import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import Confirm from './components/Confirm';
+import ConfirmDis from './components/ConfirmDis';
+import Connect from './components/Connect';
+import Homepage from './components/Homepage';
+import DumperStatus from './components/DumperStatus';
+import DumperBack from './components/DumperBack';
+import Select from './components/Select';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <Router>
+        <Routes>
+          <Route exact path="/" element={<Homepage/>} />
+          <Route exact path="/connect" element={<Connect/>} />
+          <Route exact path="/confirm" element={<Confirm/>} />
+          <Route exact path="/dumperStatus" element={<DumperStatus/>} />
+          <Route exact path="/dumperBack" element={<DumperBack/>} />
+          <Route exact path="/confirmDis" element={<ConfirmDis/>} />
+          <Route exact path="/select" element={<Select/>} />
+        </Routes>
+      
+      </Router>
   );
 }
 

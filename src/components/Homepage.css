@@ -1,0 +1,226 @@
+/* Homepage.css */
+.homepage {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #279EFF;
+    }
+    
+    .center-circle {
+      width: 350px; /* Adjust the size of the center circle as needed */
+      height: 350px; /* Adjust the size of the center circle as needed */
+      background-color: #E3F4F4;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+      box-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+    }
+    
+    .center-heading {
+      color: #16FF00;
+      margin-top: 35px;
+    }
+    
+    /* #truck-list {
+      
+      list-style: none;
+      padding: 0;
+      margin: 30px 0;
+    }
+    
+    #truck-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 70px;
+      height: 70px;
+      padding: 5px;
+      margin: 5px;
+      background-color: #ADC4CE;
+      border-radius: 50%;
+      text-align: center;
+      
+    }
+    
+    .truck-item:hover {
+      background-color: #d0d0d0;
+      
+    } */
+
+    
+    .popup {
+      position: absolute;
+      height: 250px;
+      width: 400px;
+      background-color: #E3F4F4;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      border-radius: 15px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 1);
+
+    }
+
+    
+    
+    .popup-heading {
+      color: slategrey;
+    }
+    
+    .popup-details {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+    
+    .popup-details li {
+      margin-top: 5px;
+      margin-bottom: 10px;
+    }
+    
+    /* #popup-close {
+      background-color: slategrey;
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-top: 20px;
+    } */
+
+.options{
+      flex-direction: row;
+}
+    
+    /* .popup-close:hover {
+      background-color: darkslategrey;
+    } */
+    
+    /* styles.css */
+/* body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+} */
+
+/* .center-circle {
+  width: 200px;
+  height: 200px;
+  background-color: #3498db;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.list-group{
+  display: flex;
+  flex-direction: column;
+
+}
+
+.search-ring {
+  width: 290px;
+  height: 290px;
+  background-color: transparent;
+  border: 2px solid #2ecc71;
+  border-radius: 50%;
+  position: absolute;
+  opacity: 0; /* Initially hide the rings */
+  animation: expandRing 2s linear infinite;
+}
+
+.search-ring:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.search-ring:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.search-ring:nth-child(3) {
+  animation-delay: 1s;
+}
+
+@keyframes expandRing {
+  0% {
+      transform: scale(0.2);
+      opacity: 0; /* Make rings initially invisible */
+  }
+  50% {
+      opacity: 0; /* Make rings visible after 25% of animation */
+  }
+  100% {
+      transform: scale(2);
+      opacity: 1;
+  }
+}
+
+#spin{
+  width: 5px;
+  height: 5px;
+}
+
+#spin:nth-child(1) {
+  animation-delay: 0s;
+}
+
+#spin:nth-child(2) {
+  animation-delay: 0.25s;
+}
+
+#spin:nth-child(3) {
+  animation-delay: 0.5s;
+}
+
+/* Apply styles to even index list items */
+.list-group-item.even {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 80px;
+      height: 80px;
+      padding: 5px;
+      margin: 35px;
+      background-color: #ADC4CE;
+      border-radius: 50%;
+      text-align: center;
+}
+
+/* Apply styles to odd index list items */
+.list-group-item.odd {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      width: 60px;
+      height: 60px;
+      padding: 5px;
+      margin: 1px;
+      background-color: #ADC4CE;
+      border-radius: 50%;
+      text-align: center;
+     
+     
+      
+}
+
+/* Common styles for all list items (if needed) */
+.list-group-item {
+  margin-left: 100px;
+}
+
+/* Add hover effect (optional) */
+.list-group-item:hover {
+  background-color: #d0d0d0;
+}
