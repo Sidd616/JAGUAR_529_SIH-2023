@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './DumperBack.css'; // Import a CSS file for styling
 import Footer from './Footer';
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar'
 
 const DumperBack = () => {
   const [loadCellData, setLoadCellData] = useState([]); // Initialize an empty array for loadCell data
@@ -16,7 +17,7 @@ const DumperBack = () => {
   };
 
   const handleDisconnect = () => {
-    navigate('/confirmDis');
+    navigate('/');
   };
 
   // Fetch the JSON data and update the loadCellData state
@@ -38,9 +39,10 @@ useEffect(() => {
 
   return (
     <>
-      <div className="alert alert-success alert-dismissible fade show mb-0" role="alert">
+    <Navbar/>
+      {/* <div className="alert alert-success alert-dismissible fade show mb-0" role="alert">
         <strong>Connection Secured</strong> successfully!
-      </div>
+      </div> */}
       <div className='outerBox'>
         <div className='front'>
             <p>
@@ -83,22 +85,42 @@ useEffect(() => {
         </div>
       </div>
       
-      <Footer />
+      {/* <Footer /> */}
       <button
-        type="button"
-        className="btn btn-danger"
+        type="button" 
+        className="btn btn-primary" 
+        data-bs-toggle="modal" 
+        data-bs-target="#staticBackdrop"
         id="exit"
-        onClick={handleDisconnect}
         style={{
-          position: 'absolute',
+          position: 'fixed',
           bottom: '0',
           start: '0',
-          margin: '15px',
-          marginBottom: '55px',
-        }}
+          margin: '1rem',
+          //marginBottom: '3rem',
+          //position-fixed bottom-0 start-0 mb-3
+        }}  
       >
         Disconnect
       </button>
+
+      <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="staticBackdropLabel">Attention!</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+        You are now Disconnecting from the dumper...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+        <button type="button" className="btn btn-primary" data-bs-dismiss="modal"  onClick={handleDisconnect} >Disconnect</button>
+      </div>
+    </div>
+  </div>
+</div>
     </>
   );
 };

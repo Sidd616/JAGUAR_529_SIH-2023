@@ -1,7 +1,11 @@
 body{
-      background-color: #279EFF;
+  background: linear-gradient(to right, #2193b0, #6dd5ed);
+  overflow-x: hidden;
        /* min-height: 100vh; */
       /*display: flex;
       flex-direction: column; */
 }
 
+*{
+  font-family: 'Josefin Sans', sans-serif;
+}

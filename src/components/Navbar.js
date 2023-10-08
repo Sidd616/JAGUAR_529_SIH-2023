@@ -1,31 +1,52 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Router} from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+import './Navbar.css'
+import logo from './minsof.png'
+import DateTimeDisplay from './DateTimeDisplay'
 
 export default function Navbar() {
+  const navigate = useNavigate();
+
+  const handleHomeClick = () => {
+    navigate('/');
+  };
+
+  const handleGuideClick = () => {
+    navigate('/user');  
+  };
+
+  const handleConnectClick = () => {
+    navigate('/connect');  
+  };
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark ">
-  <div className="container-fluid">
-    <Link className="navbar-brand" to="/">AccYou</Link>
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span className="navbar-toggler-icon"></span>
-    </button>
-    <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul className="navbar-nav">
+   
+    <nav className="mynavbar">
+        <img className='logo' src={logo} alt='Ministry of Coal'></img>
+        {/* <button type="button" id='naver'  className="btn btn-outline-primary" onClick={() => handleHomeClick()}>Home</button>
+        <button type="button"  id='naver' className="btn btn-outline-primary" onClick={() => handleGuideClick()}>User Guides</button>
+        <button type="button"  id='naver' className="btn btn-outline-primary" onClick={() => handleConnectClick()}>Connect</button> */}
+        <div className="links">
+        <ul className="navbar-nav">
         <li className="nav-item">
-          <Link className="nav-link active" aria-current="page" to="/">Home</Link>
+          <Link className="nav-link" to="/">Home</Link>
         </li>
+        </ul>
+        <ul className="navbar-nav">
+        <li className="nav-item">
+          <Link className="nav-link" to="/user">User Guide</Link>
+        </li>
+        </ul>
+        <ul className="navbar-nav">
         <li className="nav-item">
           <Link className="nav-link" to="/connect">Connect</Link>
         </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/">Help</Link>
-        </li>
-        <li className="nav-item">
-          <Link className="nav-link" to="/">About</Link>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        </ul>
+        <DateTimeDisplay/>
+      </div>
+
+    
+    </nav>
+  
   )
 }

@@ -1,0 +1,22 @@
+.timebox{
+      background-color: #F4F6F7;
+      border-radius: 15px;
+      padding: 10px;
+      margin-left: 15px;
+}
+
+#time{
+      color: #436998;
+      font-size: larger;
+      font-weight: bolder;
+      padding: 0;
+      margin: 0;
+}
+
+#date{
+      color: #436998;
+      font-size: medium;
+      font-weight: 500;
+      padding: 0;
+      margin: 0;
+}

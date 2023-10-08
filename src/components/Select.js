@@ -4,6 +4,7 @@ import sand from './sand.jpeg'
 import sandStone from './sandStone.jpg'
 import coal from './coal.jpg'
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar'
 
 export default function Select() {
   const navigate = useNavigate();
@@ -22,6 +23,7 @@ export default function Select() {
 
   return (
     <>
+    <Navbar/>
     <div className='choice'>
     <h4 className='selhf'>Select Material</h4>
     <div className='pushCat'>

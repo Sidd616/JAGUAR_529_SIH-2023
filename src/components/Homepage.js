@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import './Homepage.css';
+import './Navbar.js'
 
 // import "./trucks.json";
 
 import { useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
 
 const Homepage = () => {
   const [selectedTruck, setSelectedTruck] = useState(null);
@@ -45,23 +47,26 @@ const Homepage = () => {
 
   const handleSelection = () => {
       // setSelectedTruck(null);
-      navigate('/confirm');
+      navigate('/select');
     };
 
   return (
+    <>
+    <Navbar/>
 <div className="homepage">
+      
       <div className="search-ring"></div>
       <div className="search-ring"></div>
       <div className="search-ring"></div>
       <div className="center-circle">
-        <h5 className="center-heading">Available Dumpers    
-        <div className="spinner-grow spinner-grow-sm" id="spin" style={{color: '#16FF00'}} role="status">
+        <h5 className="center-heading">Connect to Dumpers    
+        <div className="spinner-grow spinner-grow-sm" id="spin" style={{color: '#83C7F1'}} role="status">
             <span className="visually-hidden">Loading...</span>
             </div>
-            <div className="spinner-grow spinner-grow-sm" id="spin" style={{color: '#16FF00'}} role="status">
+            <div className="spinner-grow spinner-grow-sm" id="spin" style={{color: '#83C7F1'}} role="status">
             <span className="visually-hidden">Loading...</span>
             </div>
-            <div className="spinner-grow spinner-grow-sm" id="spin" style={{color: '#16FF00'}} role="status">
+            <div className="spinner-grow spinner-grow-sm" id="spin" style={{color: '#83C7F1'}} role="status">
             <span className="visually-hidden">Loading...</span>
             </div>
             </h5>
@@ -99,7 +104,7 @@ const Homepage = () => {
               className={`list-group-item ${index % 2 === 0 ? 'even' : 'odd'}`}
               onClick={() => handleTruckClick(truck)}
             >
-              {truck.name}
+              {truck.numberPlate}
             </li>
           ))}
         </ul>
@@ -108,7 +113,7 @@ const Homepage = () => {
       </div>
       {selectedTruck && (
         <div className="popup">
-          <h2 className="popup-heading">{selectedTruck.name}</h2>
+          <h2 className="popup-heading">{selectedTruck.numberPlate}</h2>
           
           <ul className="popup-details">
             <li>
@@ -123,16 +128,40 @@ const Homepage = () => {
           </ul>
           
           <div className="options">
-          <button className="btn btn-warning mx-4" id="popup-close" onClick={handleClosePopup}>
+          <button className="btn btn-secondary mx-4" id="popup-close" onClick={handleClosePopup}>
             Back
           </button>
-          <button className="btn btn-success mx-4" onClick={handleSelection}>
-            Select
+          {/* <button className="btn btn-primary mx-4" onClick={handleSelection}>
+            Connect
+          </button> */}
+
+          <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          Connect
           </button>
+
+          <div className="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div className="modal-dialog">
+    <div className="modal-content">
+      <div className="modal-header">
+        <h1 className="modal-title fs-5" id="staticBackdropLabel">Attention!</h1>
+        <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div className="modal-body">
+      Are you sure...
+      </div>
+      <div className="modal-footer">
+        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">No</button>
+        <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={handleSelection} >Connect</button>
+      </div>
+    </div>
+  </div>
+</div>
+
           </div>
         </div>
       )}
     </div>
+    </>
   );
 };
 

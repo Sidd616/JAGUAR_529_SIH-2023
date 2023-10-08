@@ -1,0 +1,24 @@
+.backDrop{
+      width: 100%;
+      height: 85vh;
+}
+
+.contain{
+      background-color: #fefeff;
+      
+}
+
+/* .filler{
+      position: absolute;
+      background-color: slategray;
+      width: 100%;
+      height: 85vh;
+      opacity: 0.9;
+} */
+/* 
+.logoDrop{
+   
+      top: 60%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+} */

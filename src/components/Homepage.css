@@ -4,13 +4,14 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #279EFF;
+      background: linear-gradient(to right, #2193b0, #6dd5ed);
+      
     }
     
     .center-circle {
       width: 350px; /* Adjust the size of the center circle as needed */
       height: 350px; /* Adjust the size of the center circle as needed */
-      background-color: #E3F4F4;
+      background-color: #83C7F1;
       border-radius: 50%;
       display: flex;
       flex-direction: column;
@@ -20,7 +21,7 @@
     }
     
     .center-heading {
-      color: #16FF00;
+      color: black;
       margin-top: 35px;
     }
     
@@ -56,7 +57,7 @@
       position: absolute;
       height: 250px;
       width: 400px;
-      background-color: #E3F4F4;
+      background-color: #436998;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -69,13 +70,14 @@
     
     
     .popup-heading {
-      color: slategrey;
+      color: #040A44;
     }
     
     .popup-details {
       list-style: none;
       padding: 0;
       text-align: left;
+      color: black;
     }
     
     .popup-details li {
@@ -132,7 +134,7 @@
   width: 290px;
   height: 290px;
   background-color: transparent;
-  border: 2px solid #2ecc71;
+  border: 2px solid #83C7F1;
   border-radius: 50%;
   position: absolute;
   opacity: 0; /* Initially hide the rings */
@@ -168,6 +170,7 @@
 #spin{
   width: 5px;
   height: 5px;
+  color: #040A44 !important;
 }
 
 #spin:nth-child(1) {
@@ -192,7 +195,7 @@
       height: 80px;
       padding: 5px;
       margin: 35px;
-      background-color: #ADC4CE;
+      background-color: #436998;
       border-radius: 50%;
       text-align: center;
 }
@@ -207,20 +210,21 @@
       height: 60px;
       padding: 5px;
       margin: 1px;
+      font-size: 12px;
       background-color: #ADC4CE;
       border-radius: 50%;
       text-align: center;
-     
-     
-      
 }
 
 /* Common styles for all list items (if needed) */
 .list-group-item {
   margin-left: 100px;
+
 }
 
 /* Add hover effect (optional) */
 .list-group-item:hover {
-  background-color: #d0d0d0;
+  background-color: #040A44;
+  color: white;
 }
+
